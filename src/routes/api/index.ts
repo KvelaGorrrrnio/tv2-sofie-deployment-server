@@ -12,5 +12,5 @@ routes.use(json())
 
 routes.post('/develop', controller.develop)
 routes.post('/stage', controller.stage)
-routes.post('/production', controller.stage)
+routes.post('/production', controller.production)
 
