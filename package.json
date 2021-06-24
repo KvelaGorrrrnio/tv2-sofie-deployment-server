@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KvelaGorrrrnio/tv2-sofie-deployment-server.git"
+    "url": "git+https://github.com/tv2/tv2-sofie-deployment-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KvelaGorrrrnio/tv2-sofie-deployment-server/issues"
+    "url": "https://github.com/tv2/tv2-sofie-deployment-server/issues"
   },
-  "homepage": "https://github.com/KvelaGorrrrnio/tv2-sofie-deployment-server#readme",
+  "homepage": "https://github.com/tv2/tv2-sofie-deployment-server#readme",
   "devDependencies": {
     "@types/express": "^4.17.12",
     "@types/node": "^15.12.4",
