@@ -13,12 +13,8 @@ jobs:
           npm run build
       - uses: actions/upload-artifact@main
         with:
-          name: client artifacts
-          path: client/dist
-      - uses: actions/upload-artifact@main
-        with:
-          name: server artifacts
-          path: server/dist
+          name: dist artifacts
+          path: /dist
 
   run-npm-test:
     runs-on: ubuntu-latest
@@ -35,12 +31,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - uses: actions/download-artifact@main
         with:
-          name: client artifacts
-          path: client/dist
-      - uses: actions/download-artifact@main
-        with:
-          name: server artifacts
-          path: server/dist
+          name: dist artifacts
+          path: /dist
       - name: npm install
         run: |
           npm install
