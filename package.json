@@ -34,5 +34,8 @@
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "winston": "^3.3.3"
+  },
+  "resolutions": {
+    "trim-newlines": "^4.0.1"
   }
 }

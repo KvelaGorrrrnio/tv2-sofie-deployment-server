@@ -3,22 +3,22 @@ on:
   push:
     branches: ['master']
 jobs:
-  run-npm-build:
+  run-yarn-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: npm install and build
+      - name: yarn install and build
         run: |
-          npm install
-          npm run build
+          yarn install
+          yarn run build
       - uses: actions/upload-artifact@main
         with:
           name: dist artifacts
           path: dist
 
-  run-npm-test:
+  run-yarn-test:
     runs-on: ubuntu-latest
-    needs: run-npm-build
+    needs: run-yarn-build
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -33,15 +33,15 @@ jobs:
         with:
           name: dist artifacts
           path: dist
-      - name: npm install
+      - name: yarn install
         run: |
-          npm install
+          yarn install
         env:
           CI: true
 
   build-and-push-image:
     runs-on: ubuntu-latest
-    needs: run-npm-test
+    needs: run-yarn-test
     permissions:
       contents: read
       packages: write
