@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2021-06-28)
+
+
+### Features
+
+* Initial setup for deployment server. Is set up to only run ansible on itself. ([0b8c4a1](https://github.com/tv2/tv2-sofie-deployment-server/commit/0b8c4a1b8bdce56e4c83e601b9053a68f9b3a6cf))
+
+
+### Bug Fixes
+
+* Improved develop deployment service. ([74c4224](https://github.com/tv2/tv2-sofie-deployment-server/commit/74c4224a4283031ff7dd0ada55a3773ebb8b802a))
+* Small changes and corrections. ([5b01b31](https://github.com/tv2/tv2-sofie-deployment-server/commit/5b01b31e46f6610a171b58a43bcdfcedc5d1feb2))
+
 ## 1.1.0 (2021-06-25)
 
 
