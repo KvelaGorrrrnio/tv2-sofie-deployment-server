@@ -15,7 +15,7 @@ export const exec = (command: string, options: object = {}) => {
 
   return ssh.connect(sshOptions)
   .catch(error => JSend.$fail(error))
-  .then(() => ssh.execCommand(command, { cwd })
+  .then(() => ssh.execCommand(command)
     .catch(error => JSend.$fail(error))
     .then(data => { console.log(data); return data })
   )
