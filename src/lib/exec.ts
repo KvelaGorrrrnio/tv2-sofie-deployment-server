@@ -6,13 +6,14 @@ import { readFileSync } from 'fs'
 import * as JSend from '../lib/jsend-response'
 
 // Create passphrase object
-let passphrase = {}
+let passphrase: { passphrase?: string } = {}
 try {
   if (process.env.SSH_PASSPHRASE) {
     passphrase = { passphrase: readFileSync(process.env.SSH_PASSPHRASE, 'utf8') }
+    logger.debug('SSH_PASSPHRASE loaded:', passphrase.passphrase)
   }
 } catch(error) {
-  logger.warn('Failed loading SSH_PASSPHRASE for exec:', error)
+  logger.warn('Failed loading SSH_PASSPHRASE for exec:', error.message)
 }
 
 // Set ssh options
