@@ -2,14 +2,26 @@ import { exec as _exec } from 'child_process'
 import { join } from 'path'
 import { NodeSSH } from 'node-ssh'
 import { logger } from '../lib/logger'
+import { readFileSync } from 'fs'
 import * as JSend from '../lib/jsend-response'
 
+// Create passphrase object
+let passphrase = {}
+try {
+  if (process.env.SSH_PASSPHRASE) {
+    passphrase = { passphrase: readFileSync(process.env.SSH_PASSPHRASE, 'utf8') }
+  }
+} catch(error) {
+  logger.warning('Failed loading SSH_PASSPHRASE for exec:', error)
+}
+
+// Set ssh options
 const cwd = process.env.SSH_CWD || '/usr/local/home/ansible'
 const sshOptions = {
   host: process.env.SSH_HOST || 'localhost',
   username: process.env.SSH_USER || 'cdserver',
   privateKey: process.env.SSH_PRIVATE_KEY || '~/.ssh/id_rsa',
-  ...(process.env.SSH_PASSPHRASE && { passpharse: process.env.SSH_PASSPHRASE }),
+  ...passphrase,
 }
 
 export const exec = (command: string) => {
