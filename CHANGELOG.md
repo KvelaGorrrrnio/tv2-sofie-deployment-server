@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.3...v1.2.4) (2021-06-29)
+
+
+### Bug Fixes
+
+* Added passphrase option to exec. ([99e5668](https://github.com/tv2/tv2-sofie-deployment-server/commit/99e56683f77842b600edd83a6b91d7301ddb2d4b))
+
 ### [1.2.3](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.1.0...v1.2.3) (2021-06-29)
 
 
