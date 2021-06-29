@@ -9,6 +9,7 @@ const sshOptions = {
   host: process.env.SSH_HOST || 'localhost',
   username: process.env.SSH_USER || 'cdserver',
   privateKey: process.env.SSH_PRIVATE_KEY || '~/.ssh/id_rsa',
+  ...(process.env.SSH_PASSPHRASE && { passpharse: process.env.SSH_PASSPHRASE }),
 }
 
 export const exec = (command: string) => {
