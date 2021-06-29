@@ -28,9 +28,7 @@ const sshOptions = {
   ...passphrase,
   // https://github.com/mscdex/ssh2/issues/604
   tryKeyboard: !!passphrase.passphrase,
-  ...(!!passphrase.passphrase && { onKeyboardInteractive: (name: any, instructions: any, instructionsLang: any, prompts: any, finish: any) => {
-    finish([passphrase.passphrase])
-  } }),
+  onKeyboardInteractive: (name: any, instructions: any, instructionsLang: any, prompts: any, finish: any) => finish([passphrase.passphrase]),
 }
 
 export const exec = (command: string) => {
