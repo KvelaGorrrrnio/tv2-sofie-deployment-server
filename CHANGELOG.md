@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.1...v1.2.2) (2021-06-29)
+
+
+### Bug Fixes
+
+* Testing ssh ansible. ([c64b777](https://github.com/tv2/tv2-sofie-deployment-server/commit/c64b77784c5ae18dba06255868adb69457814791))
+
+### [1.2.1](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.1.0...v1.2.1) (2021-06-29)
+
+
+### Bug Fixes
+
+* jsend-response now exports the error codes. ([59389bf](https://github.com/tv2/tv2-sofie-deployment-server/commit/59389bfb05d9fc46be4d947096879d2f7a08049c))
+
 ## 1.2.0 (2021-06-28)
 
 
