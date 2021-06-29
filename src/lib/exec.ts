@@ -1,6 +1,7 @@
 import { exec as _exec } from 'child_process'
 import { join } from 'path'
 import { NodeSSH } from 'node-ssh'
+import { logger } from '../lib/logger'
 import * as JSend from '../lib/jsend-response'
 
 const cwd = process.env.SSH_CWD || '/usr/local/home/ansible'
@@ -12,6 +13,8 @@ const sshOptions = {
 
 export const exec = (command: string, options: object = {}) => {
   const ssh = new NodeSSH()
+
+  logger.debug('sshOptions', sshOptions)
 
   return ssh.connect(sshOptions)
   .catch(error => JSend.$fail(error))
