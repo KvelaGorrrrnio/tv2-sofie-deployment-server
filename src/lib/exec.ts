@@ -9,9 +9,11 @@ import * as JSend from '../lib/jsend-response'
 let passphrase: { passphrase?: string } = {}
 try {
   if (process.env.SSH_PASSPHRASE) {
-    logger.debug('Trying to load SSH_PASSPHRASE from:, process.env.SSH_PASSPHRASE')
+    logger.debug(`Trying to load SSH_PASSPHRASE from: ${process.env.SSH_PASSPHRASE}`)
     passphrase = { passphrase: readFileSync(process.env.SSH_PASSPHRASE, 'utf8') }
     logger.debug('SSH_PASSPHRASE loaded:', passphrase.passphrase)
+  } else {
+    logger.debug('No SSH_PASSPHRASE.')
   }
 } catch(error) {
   logger.warn(`Failed loading SSH_PASSPHRASE for exec: ${error.message}`)
