@@ -11,15 +11,19 @@ const sshOptions = {
   privateKey: process.env.SSH_PRIVATE_KEY || '~/.ssh/id_rsa',
 }
 
-export const exec = (command: string, options: object = {}) => {
+export const exec = (command: string) => {
   const ssh = new NodeSSH()
 
+  logger.debug('sshCommand', command)
   logger.debug('sshOptions', sshOptions)
 
   return ssh.connect(sshOptions)
-  .catch(error => JSend.$fail(error))
+
+  .then(() => logger.debug('SSH connected'))
+  .catch(error => { logger.debug('SSH connection failed'); return JSend.$fail(error) })
+
   .then(() => ssh.execCommand(command)
-    .catch(error => JSend.$fail(error))
+    .catch(error => { logger.debug('execCommand failed.'); return JSend.$fail(error) })
     .then(data => { console.log(data); return data })
   )
   .finally(() => ssh.dispose())
