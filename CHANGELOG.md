@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.1.0...v1.2.3) (2021-06-29)
+
+
+### Bug Fixes
+
+* More testing ([00fa80c](https://github.com/tv2/tv2-sofie-deployment-server/commit/00fa80c0851cf4d5ede370ef40efd6178d527308))
+
 ### [1.2.2](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.1...v1.2.2) (2021-06-29)
 
 
