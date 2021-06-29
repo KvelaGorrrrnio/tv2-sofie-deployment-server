@@ -12,7 +12,7 @@ try {
     passphrase = { passphrase: readFileSync(process.env.SSH_PASSPHRASE, 'utf8') }
   }
 } catch(error) {
-  logger.warning('Failed loading SSH_PASSPHRASE for exec:', error)
+  logger.warn('Failed loading SSH_PASSPHRASE for exec:', error)
 }
 
 // Set ssh options
