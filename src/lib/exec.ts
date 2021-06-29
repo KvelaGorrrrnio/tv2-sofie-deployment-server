@@ -13,7 +13,7 @@ try {
     logger.debug('SSH_PASSPHRASE loaded:', passphrase.passphrase)
   }
 } catch(error) {
-  logger.warn('Failed loading SSH_PASSPHRASE for exec:', error.message)
+  logger.warn(`Failed loading SSH_PASSPHRASE for exec: ${error.message}`)
 }
 
 // Set ssh options

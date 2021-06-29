@@ -3,7 +3,7 @@ import { environment, Environment } from '../environment'
 
 const colors = {
   'error':   'red',
-  'warn':    'orange',
+  'warn':    'yellow',
   'info':    'green',
   'debug':   'cyan',
 }
