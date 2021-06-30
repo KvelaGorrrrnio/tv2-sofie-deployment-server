@@ -14,6 +14,9 @@ const format = environment === Environment.Local ?
     wformat.printf(({ level, message, timestamp }) => `[${ timestamp }] [${ level }] ${ message }`),
     wformat.colorize({ all: true, colors }),
   ) :
-  wformat.json()
+  wformat.combine(
+    wformat.timestamp(),
+    wformat.json(),
+  )
 
 export const transport = new transports.Console({ format })
