@@ -5,8 +5,8 @@ const runAnsiblePlaybook = process.env.RUN_ANSIBLE_PLAYBOOK || './ansible-produc
 
 export const deploy = () => setTimeout(
   () => {
-    // const cmd = `${runAnsiblePlaybook} ./tv2-sofie-ansible/playbooks/deployment-server/playbook.yml`
-    const cmd = `whoami && pwd && ls .ssh`
+    const cmd = `${runAnsiblePlaybook} ./tv2-sofie-ansible/playbooks/deployment-server/playbook.yml`
+    //const cmd = `whoami && pwd && ls .ssh`
     logger.info('Deploying deployment server...')
     logger.debug(`Now executing: '${cmd}'`)
     exec(cmd)
