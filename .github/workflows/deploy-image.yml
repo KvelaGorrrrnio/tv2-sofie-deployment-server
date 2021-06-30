@@ -69,3 +69,20 @@ jobs:
             tv2media/${{ github.event.repository.name }}:${{ steps.version.outputs.tag }}
             tv2media/${{ github.event.repository.name }}:latest
 
+  deploy-new-image:
+    runs-on: ubuntu-latest
+    needs: build-and-push-image
+    steps:
+      - name: Deploy 
+        id: deploymentRequest
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: "https://${{ secrets.DEPLOYMENT_API_URL }}/production"
+          method: 'POST'
+          username: ${{ secrets.DEPLOYMENT_USERNAME }}
+          password: ${{ secrets.DEPLOYMENT_PASSWORD }}
+          data: "{\"target\":\"${{ secrets.DEPLOYMENT_TARGET }}\"}"
+
+      - name: Deployment failed
+        if: ${{ !contains(steps.deploymentRequest.outputs.response, 'success') }}
+        run: echo ${{ steps.deploymentRequest.outputs.response }} && exit 1

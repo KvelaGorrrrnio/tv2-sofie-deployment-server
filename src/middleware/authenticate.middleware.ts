@@ -1,6 +1,8 @@
 import { Response, Request, NextFunction } from 'express'
 import { logger } from '../lib/logger'
 
+import * as UserService from '../services/user.service'
+
 export const authenticate = (request: Request, response: Response, next: NextFunction) => {
   const authorization = request.header('Authorization')
   if (!authorization) {
@@ -28,13 +30,14 @@ const authenticateBasic = (basic64: string, request: Request, response: Response
   }
   const [username, password] = basic
 
-  if (username !== 'deployment-user' || password !== 'deployment-password') {
+  if (!UserService.authenticate(username, password)) {
     logger.error(`Incorrect authorization basic credentials for user ${ username }.`)
     return response.status(401).json({ status: 'fail', data: 'Incorrect authorization basic credentials.' })
   }
 
   // Set user
-  (request as any).accessInfo = { type: 'basic', user: 'blueprints-user' }
+  (request as any).accessInfo = { type: 'basic', user: UserService.get(username) }
 
   next()
 }
+
