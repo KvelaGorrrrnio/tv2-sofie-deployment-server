@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.5...v1.3.0) (2021-06-30)
+
+
+### Features
+
+* Added deployment flow to GHA. ([e49dc7e](https://github.com/tv2/tv2-sofie-deployment-server/commit/e49dc7e5b93e12d6d53c3db933bf51a1b4a947e6))
+* Added super simple user system. ([c4bef10](https://github.com/tv2/tv2-sofie-deployment-server/commit/c4bef10c2d662db63209793cf78c11c1a300bac3))
+
 ### [1.2.5](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.4...v1.2.5) (2021-06-30)
 
 
