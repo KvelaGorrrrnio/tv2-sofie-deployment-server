@@ -13,7 +13,7 @@ export const deployment_server = () => setTimeout(
     logger.debug(`Now executing: '${cmd}'`)
     exec(cmd)
       .then(() => logger.error('Deployment of deployment server should not be successful.'))
-      .catch(error => { console.log(error); logger.error(`Deployment of deployment server failed with: ${ error.stdout }`) })
+      .catch(error => { logger.debug(error); logger.error(`Deployment of deployment server failed with: ${ error.stdout }`) })
   },
   1
 )

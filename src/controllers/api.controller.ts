@@ -5,6 +5,7 @@ import * as JSR from '../lib/jsend-response'
 
 import * as AnsibleDevelopService from '../services/ansible-develop.service'
 import * as AnsibleProductionService from '../services/ansible-production.service'
+import { ensurePermission } from '../lib/ensure-permission'
 
 /**
  * @desc   Controller for deploying to develop (Zero)
@@ -14,6 +15,7 @@ export const develop = (request: Request, response: Response) =>
     target: Joi.string()
   }))
   .then(({ target }) => {
+    ensurePermission((request as any).accessInfo.user, 'develop', target)
     switch (target) {
       default: 
         logger.error(`Unknown target '${ target }' received from ${ (request as any).accessInfo.user }`)
@@ -31,6 +33,7 @@ export const production = (request: Request, response: Response) =>
     target: Joi.string()
   }))
   .then(({ target }) => {
+    ensurePermission((request as any).accessInfo.user, 'production', target)
     switch (target) {
       case 'deployment-server': return AnsibleProductionService.deployment_server()
       case 'health-monitor': return AnsibleProductionService.health_monitor()

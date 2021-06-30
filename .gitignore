@@ -1,3 +1,6 @@
+# Sensitive information
+users.json
+
 # Logs
 logs
 *.log
