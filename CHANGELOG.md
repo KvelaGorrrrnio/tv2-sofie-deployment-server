@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.3.0...v1.3.1) (2021-06-30)
+
+
+### Bug Fixes
+
+* Enabled all-access for user with empty permission list for environment. ([4e745e6](https://github.com/tv2/tv2-sofie-deployment-server/commit/4e745e6ea933c903e2fb58c9ae3e61dc619a7342))
+
 ## [1.3.0](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.5...v1.3.0) (2021-06-30)
 
 
