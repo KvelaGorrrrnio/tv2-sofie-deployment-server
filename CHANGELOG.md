@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.5](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.4...v1.2.5) (2021-06-30)
+
+
+### Bug Fixes
+
+* Now reads the passhprase file. ([17af5e8](https://github.com/tv2/tv2-sofie-deployment-server/commit/17af5e8cf8cae601209e8a8d17d90bf8663b9a58))
+* Revert to using ansible deployment-server deployment command in service. ([9d25a02](https://github.com/tv2/tv2-sofie-deployment-server/commit/9d25a0202191bbd358d6faeae9f32c6569e7b94b))
+* typo in logger ([07ecf89](https://github.com/tv2/tv2-sofie-deployment-server/commit/07ecf890a8ec3f6d42a1e98ec69d8e2fd9c38d19))
+* Using tryKeyboard for ssh exec. ([6ee70a0](https://github.com/tv2/tv2-sofie-deployment-server/commit/6ee70a045178dbfbad45c97013b4d2f806d74dff))
+
 ### [1.2.4](https://github.com/tv2/tv2-sofie-deployment-server/compare/v1.2.3...v1.2.4) (2021-06-29)
 
 
