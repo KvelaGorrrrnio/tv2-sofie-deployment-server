@@ -26,7 +26,8 @@ export const hasPermission = (user: any, environment: string, target: string) =>
   if ( !(environment in user.permissions) ) {
     return false
   }
-  if ( !user.permissions[environment].includes(target) ) {
+  // Empty list for environment is unlimited access (for testing purposes)
+  if (user.permissions[environment].length > 0 && !user.permissions[environment].includes(target) ) {
     return false
   }
   return true
