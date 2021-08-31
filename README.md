@@ -1,5 +1,6 @@
 # Sofie Deployment Server
 
+[![Node CI](https://github.com/tv2/sofie-deployment-server/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/tv2/sofie-deployment-server/actions/workflows/deploy-image.yml)
 
 ## Possible Improvements
 
