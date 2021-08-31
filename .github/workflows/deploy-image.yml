@@ -1,4 +1,4 @@
-name: Create and publish a package
+name: Node CI
 on:
   push:
     branches: ['master']
